@@ -36,7 +36,9 @@ namespace ft {
             return (*this);
         }
 
-        virtual ~stack() {}
+        virtual ~stack() {
+
+        }
 
 
         bool empty() const {

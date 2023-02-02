@@ -39,7 +39,16 @@ void	print_diff(const std::string &filename1, const std::string &filename2)
 
 int main()
 {
-    print_diff(fichier1, fichier2)
+
+    i = 1;
+    j = "a";
+
+    while( ){
+        print_diff(i, j)
+        i++;
+        j++;
+    }
+
 
 
 }

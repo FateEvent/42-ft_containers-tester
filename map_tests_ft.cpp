@@ -1,13 +1,7 @@
 #include <iostream>
 #include <string>
-#include <vector>
 #include <stdlib.h>
-#include <map>
-#include <stack>
-#include <vector>
 #include <map.hpp>
-#include <stack.hpp>
-#include <vector.hpp>
 
 template <typename T>
 std::string	print_pair(const T &iterator, bool nl = true, std::ostream &o = std::cout)

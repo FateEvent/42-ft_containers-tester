@@ -1,9 +1,7 @@
 #include <iostream>
 #include <string>
-#include <vector>
 #include <stdlib.h>
 #include "pair.hpp"
-#include <set>
 #include <set.hpp>
 
 template <typename T>

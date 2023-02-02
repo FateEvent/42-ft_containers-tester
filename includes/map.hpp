@@ -128,6 +128,7 @@ namespace ft{
 
 
         ~map() {
+
         this->clear();
         _node_alloc.destroy(_end);
         _node_alloc.deallocate(_end, 1);
@@ -395,12 +396,8 @@ namespace ft{
 
 
     void erase(iterator first, iterator last){
-        iterator cible;
-        if(first == last)
-            return ;
-        cible = first;
-        erase(++first, last);
-        erase(cible);
+        while (first != last)
+            erase(first++);
     }
 
     size_type erase(const key_type &key){

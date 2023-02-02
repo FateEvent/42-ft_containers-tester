@@ -94,7 +94,7 @@ int main() {
             vct.at(i) = (vct.size() - i) * 3;
 
         }
-        std::cout << "test speed vector  at et [] : std :";
+        std::cout << "test speed vector at and [] : std :";
         std::cout << test6.get_time();
     }
 

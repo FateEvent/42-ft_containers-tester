@@ -30,6 +30,12 @@ chmod 777 std_test
 ./ft_test
 ./std_test
 
-chmod 777 log_ft.log && chmod 777 log_std.log
+./test_container
 
-cat log_ft.log && cat log_std.log
+printf "${EOC}${BOLD}${DBLUE}\
+# ****************************************************************************** #
+
+#                          Copyright Fabio et Stephane                           #
+
+# ****************************************************************************** #
+${EOC}"

@@ -1,9 +1,6 @@
 //
 // Created by Stephane Walter on 2/3/23.
 //
-
-// Created by Stephane Walter on 2/3/23.
-//
 #include <iostream>
 #include <string>
 #include <list>
@@ -66,7 +63,7 @@ int main(void) {
 
     MutantStack<char> iterable_stack;
     MutantStack<char> mStack_char;
-    std::stack<Awesome, std::vector<Awesome> > stack_deq_buffer;
+    std::stack<Awesome, std::vector<Awesome> > stack_awesome;
     std::stack<char>	stacker;
 
     int	i = 0;
@@ -86,7 +83,19 @@ int main(void) {
         std::cout << *it;
         stacker.push(*it);
     }
+    std::cout << std::endl;
 
+    std::cout << stacker.size() << std::endl;
+    std::cout << stacker.empty() << std::endl;
 
+    srand(time(0));
 
+    for (int i = 0; i < 100000; i++)
+    {
+        int	aw = rand() % 100000;
+        stack_awesome.push(Awesome(aw));
+    }
+
+    std::cout << stack_awesome.size() << std::endl;
+    std::cout << stack_awesome.empty() << std::endl;
 }

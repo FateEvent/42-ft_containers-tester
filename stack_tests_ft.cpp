@@ -63,7 +63,7 @@ int main(void) {
 
 	MutantStack<char> iterable_stack;
 	MutantStack<char> mStack_char;
-	ft::stack<Awesome, ft::vector<Awesome> > stack_awsome;
+	ft::stack<Awesome, ft::vector<Awesome> > stack_awesome;
 	ft::stack<char>	stacker;
 
     int	i = 0;

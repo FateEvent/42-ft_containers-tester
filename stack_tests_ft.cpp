@@ -61,17 +61,10 @@ public:
 
 int main(void) {
 
-<<<<<<< HEAD
 	MutantStack<char> iterable_stack;
 	MutantStack<char> mStack_char;
 	ft::stack<Awesome, ft::vector<Awesome> > stack_awsome;
 	ft::stack<char>	stacker;
-=======
-    MutantStack<char> iterable_stack;
-    MutantStack<char> mStack_char;
-    ft::stack<Awesome, ft::vector<Awesome> > stack_deq_buffer;
-    ft::stack<char>	stacker;
->>>>>>> 4782246d4dfcff5d70327b0f0f4c5c8745c01ca5
 
     int	i = 0;
     while (i < 26)
@@ -85,7 +78,6 @@ int main(void) {
         std::cout << *it;
     std::cout << std::endl;
 
-<<<<<<< HEAD
 	for (MutantStack<char>::reverse_iterator it = mStack_char.rbegin(); it != mStack_char.rend(); it++)
 	{
 		std::cout << *it;
@@ -107,14 +99,3 @@ int main(void) {
 	std::cout << stack_awesome.size() << std::endl;
 	std::cout << stack_awesome.empty() << std::endl;
 }
-=======
-    for (MutantStack<char>::reverse_iterator it = mStack_char.rbegin(); it != mStack_char.rend(); it++)
-    {
-        std::cout << *it;
-        stacker.push(*it);
-    }
-
-
-
-}
->>>>>>> 4782246d4dfcff5d70327b0f0f4c5c8745c01ca5

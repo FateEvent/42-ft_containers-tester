@@ -143,14 +143,14 @@ namespace ft{
     mapped_type &at(const key_type &key){
         iterator it = lower_bound(key);
         if(it == end() || _compare(key, it->first))
-        throw std::out_of_range("out of range");
+        throw std::out_of_range("map::at:  key not found");
         return (*it).second;
     }
 
     const mapped_type &at(const key_type &key) const {
         const iterator it = lower_bound(key);
         if(it == end() || _compare(key, it->first))
-            throw std::out_of_range("out of range");
+            throw std::out_of_range("map::at:  key not found");
         return (*it).second;
     }
 
@@ -219,6 +219,7 @@ namespace ft{
 
     void clear(){
         this->erase(this->begin(), this->end());
+        _size = 0;
     }
 
     pair<iterator, bool> insert(const value_type &val){

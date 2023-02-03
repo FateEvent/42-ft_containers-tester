@@ -1,6 +1,9 @@
 //
 // Created by Stephane Walter on 2/3/23.
 //
+
+// Created by Stephane Walter on 2/3/23.
+//
 #include <iostream>
 #include <string>
 #include <list>
@@ -38,7 +41,7 @@ template <typename T>
 void print( T const & x ) { std::cout << x << std::endl; return; }
 
 template<typename T>
-class MutantStack : public ft::stack<T>
+class MutantStack : public std::stack<T>
 {
 public:
     MutantStack() {}
@@ -50,8 +53,8 @@ public:
     }
     ~MutantStack() {}
 
-    typedef typename ft::stack<T>::container_type::iterator			iterator;
-    typedef typename ft::stack<T>::container_type::reverse_iterator	reverse_iterator;
+    typedef typename std::stack<T>::container_type::iterator			iterator;
+    typedef typename std::stack<T>::container_type::reverse_iterator	reverse_iterator;
 
     iterator begin() { return this->c.begin(); }
     iterator end() { return this->c.end(); }
@@ -63,8 +66,8 @@ int main(void) {
 
     MutantStack<char> iterable_stack;
     MutantStack<char> mStack_char;
-    ft::stack<Awesome, ft::vector<Awesome> > stack_deq_buffer;
-    ft::stack<char>	stacker;
+    std::stack<Awesome, std::vector<Awesome> > stack_deq_buffer;
+    std::stack<char>	stacker;
 
     int	i = 0;
     while (i < 26)

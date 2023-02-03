@@ -24,16 +24,16 @@ INCLUDE				= ./includes/
 #FILES_CLIENT2		= vector_tests_ft.cpp
 
 SRC_CLIENT1			= vector_tests_std.cpp
-OBJ_CLIENT1			= $(SRC_CLIENT1:.c=.o)
+OBJ_CLIENT1			= $(SRC_CLIENT1:.cpp=.o)
 
-SRC_CLIENT2				= vector_tests_ft.cpp
-OBJ_CLIENT2				= $(SRC_CLIENT2:.c=.o)
+SRC_CLIENT2			= vector_tests_ft.cpp
+OBJ_CLIENT2			= $(SRC_CLIENT2:.cpp=.o)
 
 SRC_CLIENT3			= map_tests_ft.cpp
-OBJ_CLIENT3				= $(SRC_CLIENT3:.c=.o)
+OBJ_CLIENT3			= $(SRC_CLIENT3:.cpp=.o)
 
 SRC_CLIENT4			= map_tests_std.cpp
-OBJ_CLIENT4				= $(SRC_CLIENT4:.c=.o)
+OBJ_CLIENT4			= $(SRC_CLIENT4:.cpp=.o)
 
 CC					= c++
 CFLAGS				= -Wall -Wextra -Werror

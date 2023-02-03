@@ -1,83 +1,73 @@
-
-NAME = ft_containers
-FT_TESTER_NAME = ft_test
-STD_TESTER_NAME = std_test
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
-LINKS = test.a
-LIBLINKS = -I./includes -I./test/includes
-SRC_PATH = srcs/
-OBJ_PATH = bin/
-C_EXTENSION = .cpp
-
-
-
-MAIN_PATH	=
-MAIN_FILES 	= 	main
-SRCS_FILES	+=	$(addprefix $(MAIN_PATH), $(MAIN_FILES))
-
-SRCS_FILES_EXT 		+= 	$(addsuffix $(C_EXTENSION), $(SRCS_FILES))
-SRCS 				+= 	$(addprefix $(SRC_PATH), $(SRCS_FILES_EXT))
-OBJS 				= 	$(addprefix $(OBJ_PATH), $(SRCS_FILES_EXT:cpp=o))
-
-FT_TESTER_MAIN_PATH		=
-FT_TESTER_MAIN_FILES 	= 	main_ft
-FT_TESTER_SRCS_FILES	+=	$(addprefix $(FT_TESTER_MAIN_PATH), $(FT_TESTER_MAIN_FILES))
-
-FT_TESTER_SRCS_FILES_EXT 	+= 	$(addsuffix $(C_EXTENSION), $(FT_TESTER_SRCS_FILES))
-FT_TESTER_SRCS 				+= 	$(addprefix $(SRC_PATH), $(FT_TESTER_SRCS_FILES_EXT))
-FT_TESTER_OBJS 				= 	$(addprefix $(OBJ_PATH), $(FT_TESTER_SRCS_FILES_EXT:cpp=o))
-
-STD_TESTER_MAIN_PATH	=
-STD_TESTER_MAIN_FILES 	= 	main_std
-STD_TESTER_SRCS_FILES	+=	$(addprefix $(STD_TESTER_MAIN_PATH), $(STD_TESTER_MAIN_FILES))
-
-STD_TESTER_SRCS_FILES_EXT 		+= 	$(addsuffix $(C_EXTENSION), $(STD_TESTER_SRCS_FILES))
-STD_TESTER_SRCS 				+= 	$(addprefix $(SRC_PATH), $(STD_TESTER_SRCS_FILES_EXT))
-STD_TESTER_OBJS 				= 	$(addprefix $(OBJ_PATH), $(STD_TESTER_SRCS_FILES_EXT:cpp=o))
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: swalter <swalter@student.42mulhouse.fr>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/10/29 15:13:32 by swalter           #+#    #+#              #
+#    Updated: 2022/10/30 10:40:28 by swalter          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 
-RM = rm -rf
+NAME				= minitalk
+CLIENT2				= ft_vector
+CLIENT1				= std_vector
+CLIENT3				= ft_map
+CLIENT4				= std_map
+
+INCLUDE				= ./includes/
 
 
+#FILES_CLIENT		= vector_tests_std.cpp
+#FILES_CLIENT2		= vector_tests_ft.cpp
 
-NONE = \033[0m
-HIRED = \033[31m
-HIGREEN = \033[92m
-HIBLUE = \033[94m
-CURSIVE = \033[3m
+SRC_CLIENT1			= vector_tests_std.cpp
+OBJ_CLIENT1			= $(SRC_CLIENT1:.c=.o)
 
+SRC_CLIENT2				= vector_tests_ft.cpp
+OBJ_CLIENT2				= $(SRC_CLIENT2:.c=.o)
+
+SRC_CLIENT3			= map_tests_ft.cpp
+OBJ_CLIENT3				= $(SRC_CLIENT3:.c=.o)
+
+SRC_CLIENT4			= map_tests_std.cpp
+OBJ_CLIENT4				= $(SRC_CLIENT4:.c=.o)
+
+CC					= c++
+CFLAGS				= -Wall -Wextra -Werror
+RM					= rm -f
 
 
 all: $(NAME)
 
-$(NAME):  $(OBJS) $(FT_TESTER_OBJS) $(STD_TESTER_OBJS)
-	@echo "$(HIRED)Compiling ...$(NONE)"
-	@$(MAKE) -sC ./test
-	@mv ./test/test.a .
-	@$(CC) $(LINKS) $(CFLAGS) -o $(NAME) $(OBJS)
-	@$(CC) $(LINKS) $(CFLAGS) -o $(FT_TESTER_NAME) $(FT_TESTER_OBJS)
-	@$(CC) $(LINKS) $(CFLAGS) -o $(STD_TESTER_NAME) $(STD_TESTER_OBJS)
-	@echo "$(HIGREEN)Done.$(NONE)"
+$(NAME): $(CLIENT1) $(CLIENT2) $(CLIENT3) $(CLIENT4)
 
-.c.o:
-	@$(CC) $(FLAGS) -c ${LIBLINKS} $< -o ${<:.cpp=.o}
+$(CLIENT1): $(OBJ_CLIENT1)
 
-$(OBJ_PATH)%.o: $(SRC_PATH)%.cpp
-	@mkdir -p $(dir $@)
-	${CC} ${CFLAGS} $(LIBLINKS) -c $< -o $@
+	$(CC) $(CFLAGS) -o $(CLIENT1)  $(OBJ_CLIENT1)
+
+$(CLIENT2): $(OBJ_CLIENT2)
+
+	$(CC) $(CFLAGS) -o $(CLIENT2)  $(OBJ_CLIENT2)
+
+$(CLIENT3): $(OBJ_CLIENT3)
+
+	$(CC) $(CFLAGS) -o $(CLIENT3)  $(OBJ_CLIENT3)
+
+$(CLIENT4): $(OBJ_CLIENT4)
+
+	$(CC) $(CFLAGS) -o $(CLIENT4)  $(OBJ_CLIENT4)
 
 clean:
-	@$(RM) -r test.a $(OBJ_PATH)
-	@$(MAKE) clean -C ./test
+
+	$(RM) $(OBJ_CLIENT1) $(OBJ_CLIENT2) $(OBJ_CLIENT3) $(OBJ_CLIENT4)
 
 fclean: clean
-	@$(RM) $(NAME)
-	@$(RM) $(STD_TESTER_NAME)
-	@$(RM) $(FT_TESTER_NAME)
-	@$(RM) logs
-	@$(MAKE) fclean -C ./test
 
-re: fclean all
+	$(RM) $(CLIENT1) $(CLIENT2) $(CLIENT3) $(CLIENT4)
 
-.phony: all clean fclean re
+re:	fclean all
+
+.PHONY:	all clean fclean re

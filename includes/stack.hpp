@@ -24,15 +24,15 @@ namespace ft {
 
 
     protected:
-        container_type C;
+        container_type c;
 
     public:
 
-        explicit stack(const Container &cont = container_type()) : C(cont) {}
+        explicit stack(const Container &cont = container_type()) : c(cont) {}
 
         stack &operator=(const stack<T, Container> &other) {
             if (this != &other)
-                this->C = other.C;
+                this->c = other.c;
             return (*this);
         }
 
@@ -42,54 +42,54 @@ namespace ft {
 
 
         bool empty() const {
-            return (C.empty());
+            return (c.empty());
         }
 
         void pop() {
-            C.pop_back();
+            c.pop_back();
         }
 
         void push(const T &value) {
-            C.push_back(value);
+            c.push_back(value);
         }
 
         size_type size() const {
-            return (C.size());
+            return (c.size());
         }
 
         reference top() {
-            return (C.back());
+            return (c.back());
         }
 
         const_reference top() const {
-            return (C.back());
+            return (c.back());
         }
 
         friend bool operator==(const stack<T, Container> &a, const stack<T, Container> &b) {
-            return (a.C == b.C);
+            return (a.c == b.c);
         }
 
         friend bool operator!=(const stack<T, Container> &a, const stack<T, Container> &b) {
-            return (a.C != b.C);
+            return (a.c != b.c);
         }
 
         friend bool operator>(const stack<T, Container> &a, const stack<T, Container> &b) {
-            return (a.C > b.C);
+            return (a.c > b.c);
         }
 
 
         friend bool operator<(const stack<T, Container> &a, const stack<T, Container> &b) {
-            return (a.C < b.C);
+            return (a.c < b.c);
         }
 
 
         friend bool operator>=(const stack<T, Container> &a, const stack<T, Container> &b) {
-            return (a.C >= b.C);
+            return (a.c >= b.c);
         }
 
 
         friend bool operator<=(const stack<T, Container> &a, const stack<T, Container> &b) {
-            return (a.C <= b.C);
+            return (a.c <= b.c);
         }
 
 

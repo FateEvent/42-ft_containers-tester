@@ -25,10 +25,19 @@ printf "${EOC}${BOLD}${DBLUE}\
 ${EOC}"
 
 
-chmod 777 ft_test
-chmod 777 std_test
-./ft_test
-./std_test
+chmod 755 ft_vector
+chmod 755 std_vector
+chmod 755 ft_map
+chmod 755 std_map
+
+mkdir -p logs
+
+./ft_vector >> logs/ft_test_vector_ft.log
+./std_vector >> logs/ft_test_vector_std.log
+./ft_map  >> logs/ft_test_map_ft.log
+./std_map  >> logs/ft_test_map_std.log
+
+
 
 ./test_container
 

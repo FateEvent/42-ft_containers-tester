@@ -13,6 +13,12 @@
 int main() {
 
 
+
+    std::cout << "----------------------------------------" << std::endl;
+    std::cout << "---------------SPEED TEST---------------" << std::endl;
+    std::cout << "----------------------------------------" << std::endl;
+
+
     std::cout << "------------- testing vector------------" << std::endl;
 
     std::vector<int> v;

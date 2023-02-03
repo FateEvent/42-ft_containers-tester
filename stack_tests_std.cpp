@@ -1,6 +1,9 @@
 //
 // Created by Stephane Walter on 2/3/23.
 //
+
+// Created by Stephane Walter on 2/3/23.
+//
 #include <iostream>
 #include <string>
 #include <list>
@@ -38,7 +41,7 @@ template <typename T>
 void print( T const & x ) { std::cout << x << std::endl; return; }
 
 template<typename T>
-class MutantStack : public ft::stack<T>
+class MutantStack : public std::stack<T>
 {
 public:
     MutantStack() {}
@@ -50,8 +53,8 @@ public:
     }
     ~MutantStack() {}
 
-    typedef typename ft::stack<T>::container_type::iterator			iterator;
-    typedef typename ft::stack<T>::container_type::reverse_iterator	reverse_iterator;
+    typedef typename std::stack<T>::container_type::iterator			iterator;
+    typedef typename std::stack<T>::container_type::reverse_iterator	reverse_iterator;
 
     iterator begin() { return this->c.begin(); }
     iterator end() { return this->c.end(); }
@@ -61,17 +64,10 @@ public:
 
 int main(void) {
 
-<<<<<<< HEAD
-	MutantStack<char> iterable_stack;
-	MutantStack<char> mStack_char;
-	ft::stack<Awesome, ft::vector<Awesome> > stack_awsome;
-	ft::stack<char>	stacker;
-=======
     MutantStack<char> iterable_stack;
     MutantStack<char> mStack_char;
-    ft::stack<Awesome, ft::vector<Awesome> > stack_deq_buffer;
-    ft::stack<char>	stacker;
->>>>>>> 4782246d4dfcff5d70327b0f0f4c5c8745c01ca5
+    std::stack<Awesome, std::vector<Awesome> > stack_deq_buffer;
+    std::stack<char>	stacker;
 
     int	i = 0;
     while (i < 26)
@@ -85,29 +81,6 @@ int main(void) {
         std::cout << *it;
     std::cout << std::endl;
 
-<<<<<<< HEAD
-	for (MutantStack<char>::reverse_iterator it = mStack_char.rbegin(); it != mStack_char.rend(); it++)
-	{
-		std::cout << *it;
-		stacker.push(*it);
-	}
-	std::cout << std::endl;
-
-	std::cout << stacker.size() << std::endl;
-	std::cout << stacker.empty() << std::endl;
-	
-	srand(time(0));
-
-	for (int i = 0; i < 100000; i++)
-	{
-		int	aw = rand() % 100000;
-		stack_awesome.push(Awesome(aw));
-	}
-	
-	std::cout << stack_awesome.size() << std::endl;
-	std::cout << stack_awesome.empty() << std::endl;
-}
-=======
     for (MutantStack<char>::reverse_iterator it = mStack_char.rbegin(); it != mStack_char.rend(); it++)
     {
         std::cout << *it;
@@ -117,4 +90,3 @@ int main(void) {
 
 
 }
->>>>>>> 4782246d4dfcff5d70327b0f0f4c5c8745c01ca5

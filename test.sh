@@ -15,9 +15,7 @@ printf "${EOC}${BOLD}${DBLUE}\
 #                                                                                #
 #                                                                                #
 #                                                                                #
-#                          CONTAINER TEST                                        #
-#                                                                                #
-#                                                                                #
+#                                CONTAINER TEST                                  #
 #                                                                                #
 #                                                                                #
 #                                                                                #
@@ -50,7 +48,7 @@ mkdir -p logs
 printf "${EOC}${BOLD}${DBLUE}\
 # ****************************************************************************** #
 
-#                          Copyright Fabio et Stephane                           #
+#                          Copyright Fabio and Stephane                          #
 
 # ****************************************************************************** #
 ${EOC}"

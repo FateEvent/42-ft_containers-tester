@@ -22,9 +22,11 @@ CLIENT6				= std_stack
 #CLIENT7			= ft_set
 #CLIENT8			= std_set
 
+LOGS_PATH			= logs/
+
 nruns=8
 
-CLIENT9				=test_container
+CLIENT9				= test_container
 
 INCLUDE				= ./includes/
 
@@ -64,55 +66,44 @@ OBJ_CLIENT9			= $(SRC_CLIENT9:.cpp=.o)
 
 CC					= c++
 CFLAGS				= -Wall -Wextra -Werror
-RM					= rm -f
+RM					= rm -rf
 
 all: $(NAME)
 
 $(NAME): $(CLIENT1) $(CLIENT2) $(CLIENT3) $(CLIENT4) $(CLIENT5) $(CLIENT6)  $(CLIENT9) #  $(CLIENT7) $(CLIENT8)
 
 $(CLIENT1): $(OBJ_CLIENT1)
-
 	$(CC) $(CFLAGS) -o $(CLIENT1) $(OBJ_CLIENT1)
 
 $(CLIENT2): $(OBJ_CLIENT2)
-
 	$(CC) $(CFLAGS) -o $(CLIENT2) $(OBJ_CLIENT2)
 
 $(CLIENT3): $(OBJ_CLIENT3)
-
 	$(CC) $(CFLAGS) -o $(CLIENT3) $(OBJ_CLIENT3)
 
 $(CLIENT4): $(OBJ_CLIENT4)
-
 	$(CC) $(CFLAGS) -o $(CLIENT4) $(OBJ_CLIENT4)
 
 $(CLIENT5): $(OBJ_CLIENT5)
-
 	$(CC) $(CFLAGS) -o $(CLIENT5) $(OBJ_CLIENT5)
 
 $(CLIENT6): $(OBJ_CLIENT6)
-
 	$(CC) $(CFLAGS) -o $(CLIENT6) $(OBJ_CLIENT6)
 
 $(CLIENT9): $(OBJ_CLIENT9)
-
 	$(CC) $(CFLAGS) -o $(CLIENT9) $(OBJ_CLIENT9)
 
 #$(CLIENT7): $(OBJ_CLIENT7)
-
 #	$(CC) $(CFLAGS) -o $(CLIENT7) $(OBJ_CLIENT7)
 
 #$(CLIENT8): $(OBJ_CLIENT8)
-
 #	$(CC) $(CFLAGS) -o $(CLIENT8) $(OBJ_CLIENT8)
 
 clean:
-
 	$(RM) $(OBJ_CLIENT1) $(OBJ_CLIENT2) $(OBJ_CLIENT3) $(OBJ_CLIENT4) $(OBJ_CLIENT5) $(OBJ_CLIENT6)  $(OBJ_CLIENT9) #$(OBJ_CLIENT7) $(OBJ_CLIENT8)
 
 fclean: clean
-
-	$(RM) $(CLIENT1) $(CLIENT2) $(CLIENT3) $(CLIENT4) $(CLIENT5) $(CLIENT6) $(CLIENT9) #$(CLIENT7) $(CLIENT8)
+	$(RM) $(LOGS_PATH) $(CLIENT1) $(CLIENT2) $(CLIENT3) $(CLIENT4) $(CLIENT5) $(CLIENT6) $(CLIENT9) #$(CLIENT7) $(CLIENT8)
 
 re:	fclean all
 

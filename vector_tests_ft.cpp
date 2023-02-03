@@ -5,8 +5,8 @@
 #include <string>
 #include <stdlib.h>
 #include <vector>
-#include "includes/stack.hpp>
-#include "includes/vector.hpp>
+#include "includes/stack.hpp"
+#include "includes/vector.hpp"
 
 #define MAX_RAM 4294967296
 #define BUFFER_SIZE 4096

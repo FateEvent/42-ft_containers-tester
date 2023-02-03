@@ -8,11 +8,11 @@
 #include <deque>
 #include <list>
 #include <map>
-#include "includes/map.hpp"
+#include "map.hpp"
 #include <stack>
 #include "includes/stack.hpp"
 #include <vector>
-#include "includes/vector.hpp"
+#include "vector.hpp"
 #include "tester.hpp"
 //#include <set>
 //#include "set.hpp"

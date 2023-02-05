@@ -1,102 +1,53 @@
-//
-// Created by Stephane Walter on 12/21/22.
-//
-//tets
-#ifndef stack_HPP
-#define stack_HPP
+#ifndef STACK_H
+# define STACK_H
 
-#include <iostream>
-#include <vector>
-#include "vector.hpp"
+# include <iostream>
+# include "vector.hpp"
 
-#include <stack>
-namespace ft {
-    template<class T, class Container = ft::vector<T> >
-    class stack {
+namespace ft
+{
+	template <class T, class Container = ft::vector<T> >
+	class stack
+	{
+	protected:
+		Container											c;
 
+	public:
+		typedef Container									container_type;
+		typedef typename container_type::value_type			value_type;
+		typedef typename container_type::reference			reference;
+		typedef typename container_type::const_reference	const_reference;
+		typedef typename container_type::size_type			size_type;
 
-    public:
-        typedef Container container_type;
-        typedef typename Container::value_type value_type;
-        typedef typename Container::reference reference;
-        typedef typename Container::const_reference const_reference;
-        typedef typename Container::size_type size_type;
+		explicit stack(const container_type& q = container_type()) : c(q) {}
 
+		stack(const stack& q) : c(q.c) {}
 
-    protected:
-        container_type c;
+		~stack(void) {};
 
-    public:
+		stack&	operator= (const stack& q) { c = q.c; return *this; }
 
-        explicit stack(const Container &cont = container_type()) : c(cont) {}
+		bool	empty()	const { return c.empty(); }
 
-        stack &operator=(const stack<T, Container> &other) {
-            if (this != &other)
-                this->c = other.c;
-            return (*this);
-        }
+		size_type	size()	const { return c.size(); }
 
-        virtual ~stack() {
+		reference	top(void) { return c.back(); }
 
-        }
+		void	push(const value_type& v) { c.push_back(v); }
 
+		void	pop() { c.pop_back(); }
 
-        bool empty() const {
-            return (c.empty());
-        }
+		void	swap(stack& ms) {
+			c.swap(ms.c);
+		};
 
-        void pop() {
-            c.pop_back();
-        }
-
-        void push(const T &value) {
-            c.push_back(value);
-        }
-
-        size_type size() const {
-            return (c.size());
-        }
-
-        reference top() {
-            return (c.back());
-        }
-
-        const_reference top() const {
-            return (c.back());
-        }
-
-        friend bool operator==(const stack<T, Container> &a, const stack<T, Container> &b) {
-            return (a.c == b.c);
-        }
-
-        friend bool operator!=(const stack<T, Container> &a, const stack<T, Container> &b) {
-            return (a.c != b.c);
-        }
-
-        friend bool operator>(const stack<T, Container> &a, const stack<T, Container> &b) {
-            return (a.c > b.c);
-        }
-
-
-        friend bool operator<(const stack<T, Container> &a, const stack<T, Container> &b) {
-            return (a.c < b.c);
-        }
-
-
-        friend bool operator>=(const stack<T, Container> &a, const stack<T, Container> &b) {
-            return (a.c >= b.c);
-        }
-
-
-        friend bool operator<=(const stack<T, Container> &a, const stack<T, Container> &b) {
-            return (a.c <= b.c);
-        }
-
-
-    };
+		friend bool operator == (const stack<T, Container> &lhs, const stack<T, Container> &rhs) { return lhs.c == rhs.c; };
+		friend bool operator != (const stack<T, Container> &lhs, const stack<T, Container> &rhs) { return lhs.c != rhs.c; };
+		friend bool operator < (const stack<T, Container> &lhs, const stack<T, Container> &rhs) { return lhs.c < rhs.c; };
+		friend bool operator <= (const stack<T, Container> &lhs, const stack<T, Container> &rhs) { return lhs.c <= rhs.c; };
+		friend bool operator > (const stack<T, Container> &lhs, const stack<T, Container> &rhs) { return lhs.c > rhs.c; };
+		friend bool operator >= (const stack<T, Container> &lhs, const stack<T, Container> &rhs) { return lhs.c >= rhs.c; };
+	};
 }
 
-
-
-
-#endif //stack_HPP
+#endif

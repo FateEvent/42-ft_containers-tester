@@ -24,12 +24,9 @@ CLIENT6				= std_stack
 
 LOGS_PATH			= logs/
 
-nruns=8
-
 CLIENT9				= test_container
 
-INCLUDE				= ./includes/
-
+INCLUDE				= -I./includes/
 
 SRC_CLIENT1			= vector_tests_std.cpp
 OBJ_CLIENT1			= $(SRC_CLIENT1:.cpp=.o)

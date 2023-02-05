@@ -14,29 +14,25 @@
 #include <vector>
 #include "includes/vector.hpp"
 //#include <set>
-//#include "set.hpp"
+//#include "includes/set.hpp"
 typedef struct s_data
 {
-    std::fstream									file;
-    std::streambuf									*buffer_cout;
-    std::streambuf									*buffer_file;
-   }	t_data;
-
-
-
-
+	std::fstream	file;
+	std::streambuf	*buffer_cout;
+	std::streambuf	*buffer_file;
+}				t_data;
 
 void	close_file(t_data *data)
 {
-    std::cout.rdbuf(data->buffer_cout);
-    data->file.close();
+	std::cout.rdbuf(data->buffer_cout);
+	data->file.close();
 }
 
 s_data	*open_file(t_data *data, std::string path)
 {
-    data->file.open(path, std::iostream::out);
-    data->buffer_cout = std::cout.rdbuf();
-    data->buffer_file = data->file.rdbuf();
-    std::cout.rdbuf(data->buffer_file);
-    return (data);
+	data->file.open(path, std::iostream::out);
+	data->buffer_cout = std::cout.rdbuf();
+	data->buffer_file = data->file.rdbuf();
+	std::cout.rdbuf(data->buffer_file);
+	return (data);
 }

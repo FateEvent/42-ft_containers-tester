@@ -41,3 +41,5 @@ std_map
 ft_set
 std_set
 test_container
+
+*.log

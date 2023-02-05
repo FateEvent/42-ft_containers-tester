@@ -106,7 +106,7 @@ int main() {
     std::cout << "!= :           " << (int)(vecCopy != newVector) << std::endl;
     std::cout << "<= :           " << (int)(vecCopy <= newVector) << std::endl;
     std::cout << ">= :           " << (int)(vecCopy >= newVector) << std::endl;
-    std::cout << "\033[33m- pushing '4' only to the first stack -\033[0m" << std::endl;
+    std::cout << "\033[33m- pushing '4' only to the first vector -\033[0m" << std::endl;
     vecCopy.push_back('4');
     std::cout << "== :           " << (int)(vecCopy == newVector) << std::endl;
     std::cout << "!= :           " << (int)(vecCopy != newVector) << std::endl;
@@ -115,7 +115,7 @@ int main() {
     std::cout << ">= :           " << (int)(vecCopy >= newVector) << std::endl;
     std::cout << ">  :           " << (int)(vecCopy > newVector) << std::endl;
     std::cout << "<  :           " << (int)(vecCopy < newVector) << std::endl;
-    std::cout << "\033[33m- pushing '8' only to the second stack -\033[0m" << std::endl;
+    std::cout << "\033[33m- pushing '8' only to the second vector -\033[0m" << std::endl;
     newVector.push_back('8');
     std::cout << "== :           " << (int)(vecCopy == newVector) << std::endl;
     std::cout << "!= :           " << (int)(vecCopy != newVector) << std::endl;

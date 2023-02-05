@@ -88,7 +88,32 @@ int main(void) {
     std::cout << stacker.size() << std::endl;
     std::cout << stacker.empty() << std::endl;
 
-    srand(time(0));
+    std::cout << " == :           " << (int)(mStack_char == stacker) << std::endl;
+    std::cout << " != :           " << (int)(mStack_char != stacker) << std::endl;
+    std::cout << " <= :           " << (int)(mStack_char <= stacker) << std::endl;
+    std::cout << " >= :           " << (int)(mStack_char >= stacker) << std::endl;
+	std::cout << "  > :           " << (int)(mStack_char > stacker) << std::endl;
+    std::cout << "  < :           " << (int)(mStack_char < stacker) << std::endl;
+    std::cout << "\033[33m- pushing '4' only to the first stack -\033[0m" << std::endl;
+    mStack_char.push('4');
+    std::cout << " == :           " << (int)(mStack_char == stacker) << std::endl;
+    std::cout << " != :           " << (int)(mStack_char != stacker) << std::endl;
+    std::cout << " <= :           " << (int)(mStack_char <= stacker) << std::endl;
+    std::cout << " >= :           " << (int)(mStack_char >= stacker) << std::endl;
+    std::cout << " >= :           " << (int)(mStack_char >= stacker) << std::endl;
+    std::cout << "  > :           " << (int)(mStack_char > stacker) << std::endl;
+    std::cout << "  < :           " << (int)(mStack_char < stacker) << std::endl;
+    std::cout << "\033[33m- pushing '8' only to the second stack -\033[0m" << std::endl;
+    stacker.push('8');
+    std::cout << " == :           " << (int)(mStack_char == stacker) << std::endl;
+    std::cout << " != :           " << (int)(mStack_char != stacker) << std::endl;
+    std::cout << " <= :           " << (int)(mStack_char <= stacker) << std::endl;
+    std::cout << " >= :           " << (int)(mStack_char >= stacker) << std::endl;
+    std::cout << " >= :           " << (int)(mStack_char >= stacker) << std::endl;
+    std::cout << "  > :           " << (int)(mStack_char > stacker) << std::endl;
+    std::cout << "  < :           " << (int)(mStack_char < stacker) << std::endl;
+	
+	srand(time(0));
 
     for (int i = 0; i < 100000; i++)
     {

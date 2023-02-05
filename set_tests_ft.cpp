@@ -68,7 +68,7 @@ int main() {
 
 	std::cout << "// --> My tests <-- //" << std::endl << std::endl;
 
-	std::cout << "// --> SET <-- //" << std::endl << std::endl;
+	std::cout << "// --> Set <-- //" << std::endl << std::endl;
 
 	ft::set<char> tree;
 

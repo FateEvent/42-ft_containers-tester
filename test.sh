@@ -36,8 +36,8 @@ mkdir -p logs
 
 ./ft_vector > logs/ft_test_vector_ft.log
 ./std_vector > logs/ft_test_vector_std.log
-./ft_map  > logs/ft_test_map_ft.log
-./std_map  > logs/ft_test_map_std.log
+./ft_map > logs/ft_test_map_ft.log
+./std_map > logs/ft_test_map_std.log
 ./ft_stack > logs/ft_test_stack_ft.log
 ./std_stack > logs/ft_test_stack_std.log
 #./ft_set > logs/ft_test_set_ft.log

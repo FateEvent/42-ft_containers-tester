@@ -61,6 +61,10 @@ public:
 
 int main(void) {
 
+    std::cout << "// --> My tests <-- //" << std::endl << std::endl;
+
+	std::cout << "// --> Stack <-- //" << std::endl << std::endl;
+
 	MutantStack<char> iterable_stack;
 	MutantStack<char> mStack_char;
 	ft::stack<Awesome, ft::vector<Awesome> > stack_awesome;
@@ -112,7 +116,7 @@ int main(void) {
     std::cout << " >= :           " << (int)(mStack_char >= stacker) << std::endl;
     std::cout << "  > :           " << (int)(mStack_char > stacker) << std::endl;
     std::cout << "  < :           " << (int)(mStack_char < stacker) << std::endl;
-	
+
 	srand(time(0));
 
 	for (int i = 0; i < 100000; i++)

@@ -19,12 +19,10 @@
 //#include "set.hpp"
 
 
-
-
 void    test_vector(){
 
     std::cout << "                    ______________________" << std::endl << std::endl;
-    std::cout << "                    |       VECTOR         |" << std::endl;
+    std::cout << "                    |       VECTOR        |" << std::endl;
     std::cout << "                    ______________________" << std::endl << std::endl;
 
 
@@ -39,7 +37,7 @@ void    test_vector(){
 void    test_map(){
 
     std::cout << "                    ______________________" << std::endl << std::endl;
-    std::cout << "                    |       MAP           |" << std::endl;
+    std::cout << "                    |         MAP         |" << std::endl;
     std::cout << "                    ______________________" << std::endl << std::endl;
 
 
@@ -53,7 +51,7 @@ void    test_map(){
 void    test_stack(){
 
     std::cout << "                    ______________________" << std::endl << std::endl;
-    std::cout << "                    |      STACK          |" << std::endl;
+    std::cout << "                    |        STACK        |" << std::endl;
     std::cout << "                    ______________________" << std::endl << std::endl;
 
 
@@ -67,7 +65,7 @@ void    test_stack(){
 //void    test_set(){
 //
 //    std::cout << "                    ______________________" << std::endl << std::endl;
-//    std::cout << "                    |      SET             |" << std::endl;
+//    std::cout << "                    |         SET         |" << std::endl;
 //    std::cout << "                    ______________________" << std::endl << std::endl;
 //
 //
@@ -91,13 +89,12 @@ int	main(void)
 
 
     std::cout << "                __________________________" << std::endl << std::endl;
-    std::cout << "                |      SPEED TESTS        |" << std::endl;
+    std::cout << "                |       SPEED TESTS       |" << std::endl;
     std::cout << "                __________________________" << std::endl << std::endl;
 
 
 
     std::cout << "------------- testing vector------------" << std::endl;
-
 
     std::vector<int> v;
     v.assign(10000, 1);
@@ -197,7 +194,6 @@ int	main(void)
 
     std::cout << "-------------testing map speed------------" << std::endl;
 
-
     {
         std::vector<int> myVec;
         myVec.reserve(1000000); // reserve space for 1 million integers
@@ -249,6 +245,7 @@ int	main(void)
     for (int i = 0; i < Vec1.size(); i++) {
         mymap1.insert(ft::pair<int, int>(Vec1[i], Vec2[i]));
     }
+    std::cout << "fttttttt" << std::endl;
 
     std::cout << " : ft";
     std::cout << test6.get_time() << std::endl;

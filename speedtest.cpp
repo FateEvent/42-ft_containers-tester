@@ -26,7 +26,7 @@ int main() {
     timer test;
     test.reset();
     v.insert(v.end() - 50, 4200 * 10000, 2);
-    std::cout << "test speed vector insert : std : ";
+    std::cout << "test speed vector insert : std :  ";
     std::cout << test.get_time();
 
     ft::vector<int> v2;
@@ -44,7 +44,7 @@ int main() {
     timer test3;
     test3.reset();
     v1.push_back(*(v1.erase(v1.begin() + 8 * 10000, v1.end() - 1500 * 10000)));
-    std::cout << "test speed vector erase : std : ";
+    std::cout << "test speed vector erase : std :  ";
     std::cout << test3.get_time();
 
     ft::vector<int> v3;
@@ -100,7 +100,7 @@ int main() {
             vct.at(i) = (vct.size() - i) * 3;
 
         }
-        std::cout << "test speed vector at and [] : std :";
+        std::cout << "test speed vector at and [] : std : ";
         std::cout << test6.get_time();
     }
 
@@ -112,7 +112,7 @@ int main() {
             vct.at(i) = (vct.size() - i) * 3;
 
         }
-        std::cout << " : ft : ";
+        std::cout << ": ft :  ";
         std::cout << test6.get_time() << std::endl;
     }
 
@@ -144,7 +144,7 @@ int main() {
             mymap.insert(std::pair<int, int>(myVec[i], myVec2[i]));;
         }
 
-        std::cout << "test speed map insert: std :";
+        std::cout << "test speed map insert: std : ";
         std::cout << test4.get_time();
     }
 
@@ -191,7 +191,7 @@ int main() {
             mymap1.erase(randomNum);}
             i++;
     }
-    std::cout << " : std :";
+    std::cout << ": std : ";
     std::cout << test20.get_time() ;
 
 
@@ -209,7 +209,7 @@ int main() {
             mymap1.erase(randomNum);}
         j++;
     }
-    std::cout << " : ft :";
+    std::cout << ": ft : ";
     std::cout << test21.get_time() << std::endl;
 
 
@@ -227,7 +227,7 @@ int main() {
         int randomNum = rand() % 1000000;
         st1.push(randomNum);
     }
-    std::cout << "test speed push : std :";
+    std::cout << "test speed push : std : ";
     std::cout << test8.get_time();
 
     timer   test9;
@@ -257,7 +257,7 @@ int main() {
         for (int i = 0; i < 1000000; i++) {
             st2.pop();
         }
-        std::cout << "test speed pop : std :";
+        std::cout << "test speed pop : std : ";
         std::cout << test10.get_time();
 
     timer   test11;

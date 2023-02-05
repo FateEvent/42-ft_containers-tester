@@ -245,7 +245,6 @@ int	main(void)
     for (int i = 0; i < Vec1.size(); i++) {
         mymap1.insert(ft::pair<int, int>(Vec1[i], Vec2[i]));
     }
-    std::cout << "fttttttt" << std::endl;
 
     std::cout << " : ft";
     std::cout << test6.get_time() << std::endl;
@@ -352,6 +351,4 @@ int	main(void)
 
 
     return (0);
-
-
 }

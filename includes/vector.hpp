@@ -198,12 +198,13 @@ namespace ft
 			{
 				pointer	tmp = _alloc.allocate(n);
 
-				_capacity = n;
 				for (size_t i = 0; i < _size; i++)
+				{	
 					_alloc.construct(&tmp[i], _v[i]);
-				for (size_t i = 0; i < _size; i++)
 					_alloc.destroy(&_v[i]);
+				}
 				_alloc.deallocate(_v, _capacity);
+				_capacity = n;
 				_v = tmp;
 			}
 		}
@@ -230,7 +231,7 @@ namespace ft
 
 			if (capacity() == 0)
 				_extend();
-			if (size() + count >= capacity())
+			if (size() + count > capacity())
 				reserve(size() + count);
 			vector temp(begin() + dist, end());
 
@@ -256,7 +257,7 @@ namespace ft
 
 			if (capacity() == 0)
 				_extend();
-			if (size() + count >= capacity())
+			if (size() + count > capacity())
 				reserve(size() + count);
 			vector		temp(this->begin() + dist, this->end());
 

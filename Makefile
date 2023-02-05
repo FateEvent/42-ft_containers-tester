@@ -70,25 +70,25 @@ all: $(NAME)
 $(NAME): $(CLIENT1) $(CLIENT2) $(CLIENT3) $(CLIENT4) $(CLIENT5) $(CLIENT6)  $(CLIENT9) #  $(CLIENT7) $(CLIENT8)
 
 $(CLIENT1): $(OBJ_CLIENT1)
-	$(CC) $(CFLAGS) -o $(CLIENT1) $(OBJ_CLIENT1)
+	$(CC) $(CFLAGS) -o $(CLIENT1) $(OBJ_CLIENT1) -g3 -fsanitize=address
 
 $(CLIENT2): $(OBJ_CLIENT2)
-	$(CC) $(CFLAGS) -o $(CLIENT2) $(OBJ_CLIENT2)
+	$(CC) $(CFLAGS) -o $(CLIENT2) $(OBJ_CLIENT2) -g3 -fsanitize=address
 
 $(CLIENT3): $(OBJ_CLIENT3)
-	$(CC) $(CFLAGS) -o $(CLIENT3) $(OBJ_CLIENT3)
+	$(CC) $(CFLAGS) -o $(CLIENT3) $(OBJ_CLIENT3) -g3 -fsanitize=address
 
 $(CLIENT4): $(OBJ_CLIENT4)
-	$(CC) $(CFLAGS) -o $(CLIENT4) $(OBJ_CLIENT4)
+	$(CC) $(CFLAGS) -o $(CLIENT4) $(OBJ_CLIENT4) -g3 -fsanitize=address
 
 $(CLIENT5): $(OBJ_CLIENT5)
-	$(CC) $(CFLAGS) -o $(CLIENT5) $(OBJ_CLIENT5)
+	$(CC) $(CFLAGS) -o $(CLIENT5) $(OBJ_CLIENT5) -g3 -fsanitize=address
 
 $(CLIENT6): $(OBJ_CLIENT6)
-	$(CC) $(CFLAGS) -o $(CLIENT6) $(OBJ_CLIENT6)
+	$(CC) $(CFLAGS) -o $(CLIENT6) $(OBJ_CLIENT6) -g3 -fsanitize=address
 
 $(CLIENT9): $(OBJ_CLIENT9)
-	$(CC) $(CFLAGS) -o $(CLIENT9) $(OBJ_CLIENT9)
+	$(CC) $(CFLAGS) -o $(CLIENT9) $(OBJ_CLIENT9) -g3 -fsanitize=address
 
 #$(CLIENT7): $(OBJ_CLIENT7)
 #	$(CC) $(CFLAGS) -o $(CLIENT7) $(OBJ_CLIENT7)

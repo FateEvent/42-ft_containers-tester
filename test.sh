@@ -29,8 +29,8 @@ chmod 755 ft_map
 chmod 755 std_map
 chmod 755 ft_stack
 chmod 755 std_stack
-#chmod 755 ft_stack
-#chmod 755 std_stack
+#chmod 755 ft_set
+#chmod 755 std_set
 
 mkdir -p logs
 

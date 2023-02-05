@@ -231,7 +231,7 @@ namespace ft
 
 			if (capacity() == 0)
 				_extend();
-			if (size() + count > capacity())
+			if (size() + count >= capacity())
 				reserve(size() + count);
 			vector temp(begin() + dist, end());
 
@@ -257,7 +257,7 @@ namespace ft
 
 			if (capacity() == 0)
 				_extend();
-			if (size() + count > capacity())
+			if (size() + count >= capacity())
 				reserve(size() + count);
 			vector		temp(this->begin() + dist, this->end());
 

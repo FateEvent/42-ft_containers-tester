@@ -39,7 +39,8 @@ public:
 template<class T>
 void	vector_print(std::vector<T> vec)
 {
-	std::cout << "size and capacity: " << vec.size() << ", " << vec.capacity() << std::endl;
+//	std::cout << "size and capacity: " << vec.size() << ", " << vec.capacity() << std::endl;
+	std::cout << "size: " << vec.size() << std::endl;
 	std::cout << "The maximum storage capacity of the container is " << vec.max_size() << std::endl;
 	std::cout << "What the vector contains:" << std::endl;
 	for (typename std::vector<T>::iterator it = vec.begin(); it != vec.end(); it++)
@@ -102,28 +103,30 @@ int main() {
 		std::cout << "last letters: " << *it << std::endl;
 
 	std::vector<char>	vecCopy(newVector);
-	std::cout << "== :           " << (int)(vecCopy == newVector) << std::endl;
-    std::cout << "!= :           " << (int)(vecCopy != newVector) << std::endl;
-    std::cout << "<= :           " << (int)(vecCopy <= newVector) << std::endl;
-    std::cout << ">= :           " << (int)(vecCopy >= newVector) << std::endl;
+	std::cout << " == :           " << (int)(vecCopy == newVector) << std::endl;
+    std::cout << " != :           " << (int)(vecCopy != newVector) << std::endl;
+    std::cout << " <= :           " << (int)(vecCopy <= newVector) << std::endl;
+    std::cout << " >= :           " << (int)(vecCopy >= newVector) << std::endl;
+	std::cout << "  > :           " << (int)(vecCopy > newVector) << std::endl;
+    std::cout << "  < :           " << (int)(vecCopy < newVector) << std::endl;
     std::cout << "\033[33m- pushing '4' only to the first vector -\033[0m" << std::endl;
     vecCopy.push_back('4');
-    std::cout << "== :           " << (int)(vecCopy == newVector) << std::endl;
-    std::cout << "!= :           " << (int)(vecCopy != newVector) << std::endl;
-    std::cout << "<= :           " << (int)(vecCopy <= newVector) << std::endl;
-    std::cout << ">= :           " << (int)(vecCopy >= newVector) << std::endl;
-    std::cout << ">= :           " << (int)(vecCopy >= newVector) << std::endl;
-    std::cout << ">  :           " << (int)(vecCopy > newVector) << std::endl;
-    std::cout << "<  :           " << (int)(vecCopy < newVector) << std::endl;
+    std::cout << " == :           " << (int)(vecCopy == newVector) << std::endl;
+    std::cout << " != :           " << (int)(vecCopy != newVector) << std::endl;
+    std::cout << " <= :           " << (int)(vecCopy <= newVector) << std::endl;
+    std::cout << " >= :           " << (int)(vecCopy >= newVector) << std::endl;
+    std::cout << " >= :           " << (int)(vecCopy >= newVector) << std::endl;
+    std::cout << "  > :           " << (int)(vecCopy > newVector) << std::endl;
+    std::cout << "  < :           " << (int)(vecCopy < newVector) << std::endl;
     std::cout << "\033[33m- pushing '8' only to the second vector -\033[0m" << std::endl;
     newVector.push_back('8');
-    std::cout << "== :           " << (int)(vecCopy == newVector) << std::endl;
-    std::cout << "!= :           " << (int)(vecCopy != newVector) << std::endl;
-    std::cout << "<= :           " << (int)(vecCopy <= newVector) << std::endl;
-    std::cout << ">= :           " << (int)(vecCopy >= newVector) << std::endl;
-    std::cout << ">= :           " << (int)(vecCopy >= newVector) << std::endl;
-    std::cout << ">  :           " << (int)(vecCopy > newVector) << std::endl;
-    std::cout << "<  :           " << (int)(vecCopy < newVector) << std::endl;
+    std::cout << " == :           " << (int)(vecCopy == newVector) << std::endl;
+    std::cout << " != :           " << (int)(vecCopy != newVector) << std::endl;
+    std::cout << " <= :           " << (int)(vecCopy <= newVector) << std::endl;
+    std::cout << " >= :           " << (int)(vecCopy >= newVector) << std::endl;
+    std::cout << " >= :           " << (int)(vecCopy >= newVector) << std::endl;
+    std::cout << "  > :           " << (int)(vecCopy > newVector) << std::endl;
+    std::cout << "  < :           " << (int)(vecCopy < newVector) << std::endl;
 	vector_print(vecCopy);
 	vector_print(newVector);
 

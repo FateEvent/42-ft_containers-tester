@@ -40,7 +40,8 @@ public:
 template<class T>
 void	vector_print(ft::vector<T> vec)
 {
-	std::cout << "size and capacity: " << vec.size() << ", " << vec.capacity() << std::endl;
+//	std::cout << "size and capacity: " << vec.size() << ", " << vec.capacity() << std::endl;
+	std::cout << "size: " << vec.size() << std::endl;
 	std::cout << "The maximum storage capacity of the container is " << vec.max_size() << std::endl;
 	std::cout << "What the vector contains:" << std::endl;
 	for (typename ft::vector<T>::iterator it = vec.begin(); it != vec.end(); it++)

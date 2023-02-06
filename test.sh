@@ -29,8 +29,8 @@ chmod 755 ft_map
 chmod 755 std_map
 chmod 755 ft_stack
 chmod 755 std_stack
-#chmod 755 ft_set
-#chmod 755 std_set
+chmod 755 ft_set
+chmod 755 std_set
 
 mkdir -p logs
 
@@ -40,8 +40,8 @@ mkdir -p logs
 ./std_map > logs/ft_test_map_std.log
 ./ft_stack > logs/ft_test_stack_ft.log
 ./std_stack > logs/ft_test_stack_std.log
-#./ft_set > logs/ft_test_set_ft.log
-#./std_set > logs/ft_test_set_std.log
+./ft_set > logs/ft_test_set_ft.log
+./std_set > logs/ft_test_set_std.log
 
 ./test_container
 

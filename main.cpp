@@ -193,33 +193,30 @@ int	main(void)
 
 	std::cout << "-------------testing map speed------------" << std::endl;
 
-	{
-		std::vector<int> myVec;
-		myVec.reserve(1000000); // reserve space for 1 million integers
-		srand(time(0)); // seed the random number generator
-		for (int i = 0; i < 1000000; i++) {
-			int randomNum = rand() % 1000000; // generate a random number between 0 and 999999
-			myVec.push_back(randomNum); // add the random number to the vector
-		}
-
-		std::vector<int> myVec2;
-		myVec2.reserve(1000000); // reserve space for 1 million integers
-		srand(time(0)); // seed the random number generator
-		for (int i = 0; i < 1000000; i++) {
-			int randomNum = rand() % 1000000; // generate a random number between 0 and 999999
-			myVec2.push_back(randomNum); // add the random number to the vector
-		}
-
-		timer test9;
-		test9.reset();
-		std::map<int, int> mymap;
-		for (int i = 0; i < myVec.size(); i++) {
-			mymap.insert(std::pair<int, int>(myVec[i], myVec2[i]));;
-		}
-
-		std::cout << "test speed map insert: std :";
-		std::cout << test9.get_time();
+	std::vector<int> myVec;
+	myVec.reserve(1000000); // reserve space for 1 million integers
+	srand(time(0)); // seed the random number generator
+	for (int i = 0; i < 1000000; i++) {
+		int randomNum = rand() % 1000000; // generate a random number between 0 and 999999
+		myVec.push_back(randomNum); // add the random number to the vector
 	}
+
+	std::vector<int> myVec2;
+	myVec2.reserve(1000000); // reserve space for 1 million integers
+	srand(time(0)); // seed the random number generator
+	for (int i = 0; i < 1000000; i++) {
+		int randomNum = rand() % 1000000; // generate a random number between 0 and 999999
+		myVec2.push_back(randomNum); // add the random number to the vector
+	}
+
+	timer test9;
+	test9.reset();
+	std::map<int, int> mymap;
+	for (int i = 0; i < myVec.size(); i++)
+		mymap.insert(std::pair<int, int>(myVec[i], myVec2[i]));;
+
+	std::cout << "test speed map insert: std :";
+	std::cout << test9.get_time();
 
 
 	ft::vector<int> Vec1;
@@ -241,12 +238,44 @@ int	main(void)
 	timer test10;
 	test10.reset();
 	ft::map<int, int> mymap1;
-	for (int i = 0; i < Vec1.size(); i++) {
+	for (int i = 0; i < Vec1.size(); i++)
 		mymap1.insert(ft::pair<int, int>(Vec1[i], Vec2[i]));
-	}
 
 	std::cout << " : ft: ";
 	std::cout << test10.get_time() << std::endl;
+
+
+
+
+	timer test10b;
+	test10b.reset();
+	std::map<int, int>::iterator p = mymap.begin();
+	for (unsigned long int i = 0; p != mymap.end(); ++i, ++p) {
+		try {
+			mymap.at((*p).first) = i;
+		}
+		catch (std::out_of_range& e) {
+			std::cerr << e.what() << std::endl;
+		}
+	}
+	std::cout << "test speed map at and [] : std :";
+	std::cout << test10b.get_time();
+
+
+	timer test10c;
+	test10c.reset();
+	ft::map<int, int>::iterator q = mymap1.begin();
+	for (unsigned long int i = 0; p != mymap.end(); ++i, ++p) {
+		try {
+			mymap1.at((*p).first) = i;
+		}
+		catch (std::out_of_range& e) {
+			std::cerr << e.what() << std::endl;
+		}
+	}
+	std::cout << " : ft : ";
+	std::cout << test10c.get_time() << std::endl;
+
 
 
 

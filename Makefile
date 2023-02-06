@@ -24,6 +24,13 @@ CLIENT8				= std_set
 
 LOGS_PATH			= logs/
 
+
+
+define NL
+
+endef
+TARGET = 1 2 3 4 5 6 7 8 9
+
 CLIENT9				= test_container
 
 INCLUDE				= -I./includes/
@@ -52,22 +59,21 @@ OBJ_CLIENT7			= $(SRC_CLIENT7:.cpp=.o)
 SRC_CLIENT8			= stack_tests_std.cpp
 OBJ_CLIENT8			= $(SRC_CLIENT8:.cpp=.o)
 
-
 SRC_CLIENT9			= main.cpp \
 					comparator.cpp \
 					timer.cpp  \
 					files.cpp
-
-
 OBJ_CLIENT9			= $(SRC_CLIENT9:.cpp=.o)
 
+
 CC					= c++
-CFLAGS				= -Wall -Wextra -Werror
+CFLAGS				= -Wall -Wextra -Werror -std=c++98
 RM					= rm -rf
 
 all: $(NAME)
 
-$(NAME): $(CLIENT1) $(CLIENT2) $(CLIENT3) $(CLIENT4) $(CLIENT5) $(CLIENT6) $(CLIENT9) $(CLIENT7) $(CLIENT8)
+
+$(NAME): $(foreach n, $(TARGET), $(CLIENT$(n)))
 
 $(CLIENT1): $(OBJ_CLIENT1)
 	$(CC) $(CFLAGS) -o $(CLIENT1) $(OBJ_CLIENT1) -g3 -fsanitize=address
@@ -91,10 +97,10 @@ $(CLIENT9): $(OBJ_CLIENT9)
 	$(CC) $(CFLAGS) -o $(CLIENT9) $(OBJ_CLIENT9) -g3 -fsanitize=address
 
 $(CLIENT7): $(OBJ_CLIENT7)
-	$(CC) $(CFLAGS) -o $(CLIENT7) $(OBJ_CLIENT7)
+	$(CC) $(CFLAGS) -o $(CLIENT7) $(OBJ_CLIENT7) -g3 -fsanitize=address
 
 $(CLIENT8): $(OBJ_CLIENT8)
-	$(CC) $(CFLAGS) -o $(CLIENT8) $(OBJ_CLIENT8)
+	$(CC) $(CFLAGS) -o $(CLIENT8) $(OBJ_CLIENT8) -g3 -fsanitize=address
 
 clean:
 	$(RM) $(OBJ_CLIENT1) $(OBJ_CLIENT2) $(OBJ_CLIENT3) $(OBJ_CLIENT4) $(OBJ_CLIENT5) $(OBJ_CLIENT6)  $(OBJ_CLIENT9) #$(OBJ_CLIENT7) $(OBJ_CLIENT8)
